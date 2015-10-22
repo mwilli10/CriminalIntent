@@ -8,7 +8,11 @@
     <string name="crime_title_label">Settings</string>
     <string name="crime_solved_label">Settings</string>
     <string name="crime_details_label">Settings</string>
-
+    <string name="date_picker_title">Date of crime:</string>
+    <string name="time_picker_title">Time of crime:</string>
+    <string name="dialog_editDate">Date</string>
+    <string name="dialog_editTime">Time</string>
+    <string name="dialog_editDateOrTime">Do you want to edit the date or time?</string>
 
 
 </resources>
