@@ -8,12 +8,14 @@ import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -132,6 +134,22 @@ public class CrimeFragment extends Fragment {
             Date date = (Date) data.getSerializableExtra(TimePickerFragment.EXTRA_TIME);
             mCrime.setDate(date);
             updateTime();
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()) {
+            case R.id.menu_item_delete_crime:
+                if (mCrime != null)
+                    Toast.makeText(getActivity(), "Deleting this crime", Toast.LENGTH_SHORT).show();
+                CrimeLab.get(getActivity()).deleteCrime(mCrime);
+                getActivity().finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
