@@ -18,6 +18,7 @@
     <string name="hide_subtitle">Hide Subtitle</string>
     <string name="subtitle_format">%1$s crimes</string>
     <string name="delete_crime">Delete Crime</string>
+    <string name="empty_crime_list_label"> Crime List Currently Empty</string>
 
     <plurals name="subtitle_plural">
         <item quantity="one">%1$s crime</item>
