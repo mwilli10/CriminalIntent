@@ -19,6 +19,9 @@
     <string name="subtitle_format">%1$s crimes</string>
     <string name="delete_crime">Delete Crime</string>
     <string name="empty_crime_list_label"> Crime List Currently Empty</string>
+    <string name="view_list_label">LIST</string>
+    <string name="view_calendar_label">CALENDAR</string>
+    <string name="view_map_label">MAP</string>
 
     <plurals name="subtitle_plural">
         <item quantity="one">%1$s crime</item>

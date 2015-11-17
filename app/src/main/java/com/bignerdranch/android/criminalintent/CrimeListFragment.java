@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,15 +40,34 @@ public class CrimeListFragment extends Fragment {
     //private static final String POSITION_OF_CRIME = "position_of_crime";
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_crime_list, container, false);
+
+        TabHost tabHost = (TabHost) view.findViewById(R.id.tabHost);
+        tabHost.setup();
+        TabHost.TabSpec tabSpec = tabHost.newTabSpec("list");
+        tabSpec.setContent(R.id.tab_list);
+        tabSpec.setIndicator(getResources().getString(R.string.view_list_label));
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("calendar");
+        tabSpec.setContent(R.id.tab_calendar);
+        tabSpec.setIndicator(getResources().getString(R.string.view_calendar_label));
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("map");
+        tabSpec.setContent(R.id.tab_map);
+        tabSpec.setIndicator(getResources().getString(R.string.view_map_label));
+        tabHost.addTab(tabSpec);
 
         mCrimeRecyclerView = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
