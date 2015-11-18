@@ -22,6 +22,9 @@
     <string name="view_list_label">LIST</string>
     <string name="view_calendar_label">CALENDAR</string>
     <string name="view_map_label">MAP</string>
+    <string name="title_activity_map">Map</string>
+
+
 
     <plurals name="subtitle_plural">
         <item quantity="one">%1$s crime</item>
